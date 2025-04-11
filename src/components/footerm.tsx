@@ -1,20 +1,11 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="relative bg-[#0a0a0f] text-white font-poppins px-6 pt-12 pb-10 rounded-t-3xl shadow-inner">
-      {/* زر الرجوع لأعلى */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="absolute -top-6 right-6 bg-white text-black rounded-full p-3 shadow-md hover:bg-gray-100 transition"
-      >
-        <ArrowUp size={20} />
-      </button>
 
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8">
-          {/* Logo + وصف */}
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-[#0a0a0f] to-[#646bdf] bg-clip-text text-transparent mb-4">
               TEAM Rive
@@ -23,8 +14,6 @@ const Footer = () => {
               Building digital excellence together through innovative solutions and creative design.
             </p>
           </div>
-
-          {/* روابط الشركة */}
           <div>
             <h4 className="font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-400">

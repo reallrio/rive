@@ -7,4 +7,13 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    proxy: {
+      '/api/user': {
+        target: 'http://fi7.bot-hosting.net:20331',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/user/, '/api/user'),
+      },
+    },
+  }  
 });

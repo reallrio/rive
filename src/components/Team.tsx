@@ -40,7 +40,7 @@ const rawTeam: TeamMember[] = [
     name: 'Léon',
     role: 'Back-End Developer',
     githubUsername: '1',
-    instagramUsername: '1',
+    instagramUsername: '_dqis',
     discordId: '1155048381677305876'
   }
 ];
@@ -53,12 +53,14 @@ const Team = () => {
       const updated = await Promise.all(
         rawTeam.map(async (member) => {
           try {
-            const res = await fetch(`http://fi7.bot-hosting.net:20331/api/user/${member.discordId}`);
+            const res = await fetch(`/api/user/${member.discordId}`)
+
+
             const data = await res.json();
             return {
               ...member,
               avatar: data.avatar,
-              decoration: data.avatar_decoration_data || null // ✅ لاحظ هنا
+              decoration: data.avatar_decoration_data || null
             };
           } catch {
             return {
